@@ -17,7 +17,7 @@ namespace CalculadoraParaMatrices
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>h
     public partial class MainWindow : Window
     {
         private readonly GridLength gridLength = 
