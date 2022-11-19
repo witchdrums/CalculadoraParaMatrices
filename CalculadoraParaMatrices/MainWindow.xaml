@@ -1,0 +1,161 @@
+﻿<Window x:Class="CalculadoraParaMatrices.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculadoraParaMatrices"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock 
+            Grid.Column="0" 
+            Text="Calculadora para matrices" 
+            TextWrapping="Wrap"
+            HorizontalAlignment="Center" 
+            FontSize="25"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Label  Content="Matriz A" Grid.Row="0" HorizontalAlignment="Center"/>
+                    <Grid x:Name="Grid_MatrizA" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBox x:Name="TextBox_MatrixA_00" Grid.Row="0" Grid.Column="0" Text="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixA_10" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixA_02" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixA_12" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Label  Content="Matriz B" Grid.Row="0" HorizontalAlignment="Center"/>
+                    <Grid x:Name="Grid_MatrizB" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBox x:Name="TextBox_MatrixB_00" Grid.Row="0" Grid.Column="0" Text="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixB_10" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixB_02" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <TextBox x:Name="TextBox_MatrixB_12" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Margin="10,20" Content="Capturar"/>
+                    <Button Grid.Column="1" Margin="10,20" Content="Limpiar"/>
+                    <Grid Grid.Column="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Dimensiones" Grid.Row="0" HorizontalAlignment="Center"/>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Ren" Grid.Column="0" Grid.Row="0"/>
+                            <Label Content="Col" Grid.Column="0" Grid.Row="1"/>
+                            <Button Grid.Column="1" Grid.Row="0" Content="+" Click="AddRowToMatrixA"/>
+                            <Button Grid.Column="1" Grid.Row="1" Content="+" Click="AddColumnToMatrixA"/>
+                            <Button Grid.Column="2" Grid.Row="0" Content="-" Click="RemoveRowFromMatrixA"/>
+                            <Button Grid.Column="2" Grid.Row="1" Content="-" Click="RemoveColumnFromMatrixA"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Margin="10,20" Content="Capturar"/>
+                    <Button Grid.Column="1" Margin="10,20" Content="Limpiar"/>
+                    <Grid Grid.Column="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Dimensiones" Grid.Row="0" HorizontalAlignment="Center"/>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Ren" Grid.Column="0" Grid.Row="0"/>
+                            <Label Content="Col" Grid.Column="0" Grid.Row="1"/>
+                            <Button Grid.Column="1" Grid.Row="0" Content="+" Click="AddRowToMatrixB"/>
+                            <Button Grid.Column="1" Grid.Row="1" Content="+" Click="AddColumnToMatrixB" />
+                            <Button Grid.Column="2" Grid.Row="0" Content="-" Click="RemoveRowFromMatrixB"/>
+                            <Button Grid.Column="2" Grid.Row="1" Content="-" Click="RemoveColumnFromMatrixB" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Bottom">
+                <Button Content="Suma" Padding="25,0"/>
+                <Button Content="Resta" Margin="20,0" Padding="25,0"/>
+                <Button Content="Producto" Padding="20,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

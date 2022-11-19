@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraParaMatrices", "CalculadoraParaMatrices\CalculadoraParaMatrices.csproj", "{5D80D144-6F4A-4239-9838-0205F088D31E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D80D144-6F4A-4239-9838-0205F088D31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D80D144-6F4A-4239-9838-0205F088D31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D80D144-6F4A-4239-9838-0205F088D31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D80D144-6F4A-4239-9838-0205F088D31E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECA2D104-D045-46F9-97B7-6F221E627ADC}
+	EndGlobalSection
+EndGlobal
